@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submissions</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">Users</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @submissions.each do |submission| %>
+          <tr>
+            <td><%= submission.name %></td>
+            <td><%= submission.age %></td>
+            <td><%= submission.email %></td>
+            <td><%= submission.contact %></td>
+            <td>
+              <a href="/submissions/<%= submission.id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+              <form action="/submissions/<%= submission.id %>" method="post" style="display:inline;">
+                <input type="hidden" name="_method" value="delete">
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <a href="/" class="btn btn-primary">Back to Form</a>
+  </div>
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

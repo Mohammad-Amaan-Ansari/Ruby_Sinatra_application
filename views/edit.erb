@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Submission</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">Edit Submission</h2>
+    <form action="/submissions/<%= @submission.id %>" method="post">
+      <input type="hidden" name="_method" value="put">
+      <% if @errors %>
+        <div class="alert alert-danger">
+          <% @errors.each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="<%= @submission.name %>" required>
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" name="age" value="<%= @submission.age %>" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" value="<%= @submission.email %>" required>
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact</label>
+        <input type="text" class="form-control" id="contact" name="contact" value="<%= @submission.contact %>" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+      <a href="/submissions" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
