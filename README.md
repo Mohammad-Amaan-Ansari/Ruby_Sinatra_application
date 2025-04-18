@@ -1,67 +1,61 @@
-Ruby Sinatra Application
+# Ruby Sinatra Application
 
-A simple web application built with Sinatra and SQLite3 that demonstrates basic CRUD operations using sinatra-activerecord.
+A simple web application built with Sinatra and SQLite3 that demonstrates basic CRUD operations using `sinatra-activerecord`.
 
-🚀 Overview
+---
+
+## 🚀 Overview
 
 This application allows users to submit and manage entries (e.g., submissions or posts). It uses:
 
-Ruby (v3.1.0)
+- **Ruby** (v3.1.0)  
+- **Sinatra** (v4.0.0)  
+- `sinatra-activerecord` for ORM and migrations  
+- **SQLite3** as the development database  
+- **Bundler** to manage gem dependencies  
 
-Sinatra (v4.0.0)
+---
 
-sinatra-activerecord for ORM and migrations
-
-SQLite3 as the development database
-
-Bundler to manage gem dependencies
-
-📝 Prerequisites
+## 📝 Prerequisites
 
 Before you begin, make sure you have the following installed:
 
-Ruby (≥ 3.0)
+- Ruby (≥ 3.0)  
+- Bundler (`gem install bundler`)  
+- SQLite3  
+- Git (to clone the repository)  
 
-Bundler (gem install bundler)
+---
 
-SQLite3
+## ⚙️ Installation & Setup
 
-Git (to clone the repository)
+**1. Clone the repository:**
 
-⚙️ Installation & Setup
-
-Clone the repository
-
+```bash
 git clone https://github.com/Mohammad-Amaan-Ansari/Ruby_Sinatra_application.git
 cd Ruby_Sinatra_application
 
-Install gem dependencies
-
+2. Install gem dependencies:
 bundle install
 
-Configure the database
+3. Configure the database
+The project is preconfigured to use SQLite3.
+Database configuration is in: config/database.yml.
 
-The project is preconfigured to use SQLite3. The default configuration file is at config/database.yml.
-
-Create and migrate the database
-
+4. Create and migrate the database:
 bundle exec rake db:create
 bundle exec rake db:migrate
 
 ▶️ Running the Application
-
-Start the Sinatra server by running:
-
+To start the Sinatra server:
 ruby app.rb
 
-By default, the app will be available at http://localhost:4567.
+The application will be available at: http://localhost:4567
 
-Alternatively, you can use rackup:
-
+Alternatively, you can use Rack:
 bundle exec rackup -p 4567
 
 📂 Project Structure
-
 .
 ├── app.rb               # Main Sinatra application file
 ├── config.ru            # Rack configuration
@@ -73,23 +67,18 @@ bundle exec rackup -p 4567
 ├── lib/
 │   └── submission.rb    # Model definitions
 ├── public/
-│   └── css/            # Stylesheets
+│   └── css/             # Stylesheets
 ├── routes/              # Route handlers split by functionality
 ├── views/               # ERB templates
 ├── Gemfile              # Gem dependencies
 ├── Rakefile             # Rake tasks (db:create, db:migrate, etc.)
 └── README.md            # Project documentation
+```
+# 🤝 Contributing
+Contributions are welcome! Follow these steps:
 
-🤝 Contributing
-
-Contributions are welcome! Feel free to:
-
- 1.Fork this repository
-
- 2.Create a feature branch (git checkout -b feature-name)
-
- 3.Commit your changes (git commit -m 'Add some feature')
-
- 4.Push to the branch (git push origin feature-name)
-
- 5.Open a Pull Request
+- Fork this repository
+- Create a branch: git checkout -b feature-name
+- Commit your changes: git commit -m 'Add some feature'
+- Push to your branch: git push origin feature-name
+- Open a Pull Request
