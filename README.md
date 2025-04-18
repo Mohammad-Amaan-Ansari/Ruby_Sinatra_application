@@ -17,3 +17,4 @@
   Start the application with `ruby app.rb`.
   ```
  -->
+# Ruby_Sinatra_application
